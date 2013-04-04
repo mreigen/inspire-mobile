@@ -1,0 +1,12 @@
+<div id="content-wrapper">
+  <div id="inner-wrapper">
+    <div id="content-title">Top videos</div>
+    <div id="top5-wrapper" class="widget"></div>
+    <div id="top5-wrapper-1" class="widget"></div>
+    <div id="top5-wrapper-2" class="widget"></div>
+  </div>
+</div>
+
+<%= Video::Widget.top("top5-wrapper", "duration") %>
+<%= Video::Widget.top("top5-wrapper-1", "created_at") %>
+<%= Video::Widget.top("top5-wrapper-2", "play_counts") %>

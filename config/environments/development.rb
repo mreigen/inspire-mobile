@@ -22,5 +22,8 @@ InspireMobile::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  ActiveSupport::Dependencies.autoload_paths << File::join( Rails.root, 'lib')
+  ActiveSupport::Dependencies.explicitly_unloadable_constants << '[Video]'
 end
 
