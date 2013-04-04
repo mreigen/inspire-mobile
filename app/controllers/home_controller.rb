@@ -1,5 +1,5 @@
-load "lib/video.rb"
 require "helix"
+load "lib/video.rb"
 
 class HomeController < ApplicationController
 
@@ -10,5 +10,15 @@ class HomeController < ApplicationController
   end
 
   def index
+  end
+
+  def get_list
+    video_data = Video::get_top("", 
+                            {
+                              :contributor => "", 
+                              :limit => 99,
+                              :search_query => ""
+                            })
+    render :json => video_data and return
   end
 end

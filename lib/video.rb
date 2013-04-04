@@ -87,18 +87,7 @@ module Video
       ratings = 0.0
       video_id = v["video_id"]
       next if video_id.blank?
-=begin
-      comment_data = self.get_comments(video_id)
-      next if comment_data.blank? || comment_data == 'null'
-      JSON.parse(comment_data).each do |c|
-        comment_count += 1 unless c["text"].blank?
-        unless c["rating"].blank?
-          rating_count +=1
-          ratings += c["rating"]
-        end
-      end
-      ratings /= rating_count unless rating_count == 0
-=end      
+      
       video_list.push({
         "guid"            => video_id, 
         "title"           => v["title"],

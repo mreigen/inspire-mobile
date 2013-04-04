@@ -1,4 +1,5 @@
 InspireMobile::Application.routes.draw do
+  get "home/get_list" => "home#get_list"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
