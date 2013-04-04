@@ -8,6 +8,12 @@ gem 'rails'
 gem 'pg'
 gem 'helix', :git => 'git@github.com:Twistage/helix.git'
 
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
