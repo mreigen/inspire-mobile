@@ -62,15 +62,11 @@ module Video
   end
   
   def self.get_top(for_field, query = {})
-    for_contributor = query[:contributor]
-    for_contributor ||= ""
-    limit = query[:limit]
-    limit ||= 5
-    search_query = query[:search_query]
-    search_query ||= ""
-    sort_by = query[:sort_by]
-    sort_by ||= "created_by"
-    
+    for_contributor = query[:contributor] ||= ""
+    limit = query[:limit] ||= 5
+    search_query = query[:search_query] ||= ""
+    sort_by = query[:sort_by] ||= "created_by"
+
     videos = JSON.parse(self.search({ 
                                       :contributor => for_contributor,
                                       :query => search_query,
@@ -87,14 +83,16 @@ module Video
       ratings = 0.0
       video_id = v["video_id"]
       next if video_id.blank?
-      
+
       video_list.push({
         "guid"            => video_id, 
         "title"           => v["title"],
         "thumb-src"       => self.get_screenshot(video_id),
         "created_at"      => v["created_at"],
         "play_counts"     => v["play_counts"],
-        "duration"        => v["duration"]
+        "duration"        => v["duration"],
+        "like_count"      => v["custom_fields"],
+        "description"     => v["description"]
       })
     end
     
@@ -109,6 +107,8 @@ module Video
       video_list.sort_by! {|h| h["play_counts"]}
     when "duration"
       video_list.sort_by! {|h| h["duration"]}
+    when "like_count"
+      video_list.sort_by! {|h| h["like_count"]}
     end
     
     video_list.last(limit).reverse
@@ -119,8 +119,8 @@ module Video
     video.attributes.to_json.html_safe
   end
   
-  def self.search(query = {})
-    videos = Helix::Video.find_all(query).to_json.html_safe
+  def self.search(options = {})
+    videos = Helix::Video.find_all(options).to_json.html_safe
   end
   
   # temporary work around since requesting this url from javascript doesn't work properly
@@ -136,7 +136,7 @@ module Video
   end
   
   def self.get_screenshot(video_id)
-    "#{get_base_url}/videos/#{video_id.to_s}/screenshots/64w.jpg"
+    "#{get_base_url}/videos/#{video_id.to_s}/screenshots/640h250w.jpg"
   end
   
   def self.post_comment(video_id, data)
