@@ -1,6 +1,6 @@
 <div class="ui-btn-inner ui-li">
   <div class="ui-btn-text">
-    <a href="/home/show_video?guid={{video.guid}}" class="ui-link-inherit">
+    <a href="#" data-guid="{{video.guid}}" class="ui-link-inherit item-list">
       <img id="play-button-img" class="ui-li-thumb" src="/assets/play_button.png"/>
       <img class="ui-li-thumb" src="{{video['thumb-src']}}"/>
       <h2 class="ui-li-heading">{{video.title}}</h2>
@@ -10,3 +10,9 @@
   </div>
   <span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span>
 </div>
+<script>
+jQuery(".item-list").click(function() {
+  var _guid = jQuery(this).data("guid");
+  window.location = "/home/show_video?guid=" + _guid;
+});
+</script>

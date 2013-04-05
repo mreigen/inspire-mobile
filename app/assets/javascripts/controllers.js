@@ -13,7 +13,7 @@ function VideoListController($scope, $http) {
     $scope.popularVideos = data;
   });
 
-  $http.get('/home/get_list?filter_by=contributor&contributor_name=admin').
+  $http.get('/home/get_list?filter_by=contributor&contributor_name=sample').
   success(function(data) {
     $scope.myVideos = data;
   });

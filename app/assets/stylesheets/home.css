@@ -25,7 +25,7 @@ div.ui-btn-text a {
 }
 
 .description {
-
+  white-space: normal !important;
 }
 
 .duration {
