@@ -36,6 +36,10 @@ div.ui-btn-text a {
   font-size: 18px !important;
 }
 
+.ui-btn-text img {
+  width: 50%;
+}
+
 /* A bit custom styling */
 .my-page {
     background: #222;
