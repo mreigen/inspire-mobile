@@ -17,15 +17,6 @@ class HomeController < ApplicationController
   def show_video
     guid = params[:guid] || ""
     @video = Helix::Video.find(guid)
-
-    @viewNode =<<EOF
-      <script type="text/javascript" src="http://console.twistage.com/api/script"></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function() {
-      viewNode("#{@video.guid}", {"server_detection": true, "width": 480, "height": 383});
-    });
-  </script>
-EOF
   end
 
   def get_list

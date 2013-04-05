@@ -4,10 +4,11 @@
     <a href="grid-listview.html" data-shadow="false" data-iconshadow="false" data-icon="arrow-l" data-iconpos="notext" data-rel="back" data-ajax="false">Back</a>
   </div><!-- /header -->
   
-  <div data-role="content">
-<div id="embedded_player_<%= @video.guid %>_wrapper" style="width:480px; height:383px; background-color: #000;">
-      <a id="embedded_player_<%= @video.guid %>" style="position: absolute;"><div style="height: 383px; width: 480px; display: block; position: relative; cursor: default; -webkit-user-drag: none;"><video style="height: 100%; width: 100%; display: block; cursor: pointer; -webkit-user-drag: none;" id="embedded_player_<%= @video.guid %>_api" controls="" poster="http://service.twistage.com:80/videos/<%= @video.guid %>/screenshots/480w383h.jpg"><source src="http://mobile.twistage.com/videos/<%= @video.guid %>/assets/5496523/play.mp4?&amp;" type="video/mp4; codecs=&quot;avc1.42E01e, mp4a&quot;"></video></div></a>
-      
+  <div data-role="content" id="content">
+    <div id="embedded_player_<%= @video.guid %>_wrapper" class="player">
+      <div class="video-tag-wrapper">
+        <video style="height: 100%; width: 100%; display: block; cursor: pointer; -webkit-user-drag: none;" id="embedded_player_<%= @video.guid %>_api" controls="" poster="http://service.twistage.com:80/videos/<%= @video.guid %>/screenshots/480w383h.jpg"><source src="http://mobile.twistage.com/videos/<%= @video.guid %>/assets/5496523/play.mp4?&amp;" type="video/mp4; codecs=&quot;avc1.42E01e, mp4a&quot;"></video>
+      </div>
     </div>
   </div> <!-- content -->
 </div>
