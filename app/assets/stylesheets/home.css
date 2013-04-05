@@ -21,7 +21,7 @@ div.ui-btn-text {
 
 div.ui-btn-text a {
   height: 100%;
-  padding-left: 280px !important;
+  padding-left: 340px !important;
 }
 
 .description {
@@ -54,6 +54,15 @@ div.ui-btn-text a {
   position: relative;
   cursor: default;
   -webkit-user-drag: none;
+}
+
+#video-page .ui-content {
+  padding: 0px !important;
+}
+
+#play-button-img {
+  z-index: 999;
+  opacity: 0.5;
 }
 
 /* A bit custom styling */
