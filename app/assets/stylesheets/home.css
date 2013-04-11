@@ -3,7 +3,7 @@
 }
 
 .ui-li-thumb {
-  height: 250px;
+  height: 150px;
 }
 
 .ui-li-thumb, .ui-listview .ui-li-icon {
@@ -21,7 +21,7 @@ div.ui-btn-text {
 
 div.ui-btn-text a {
   height: 100%;
-  padding-left: 340px !important;
+  padding-left: 235px !important;
 }
 
 .description {
@@ -37,7 +37,7 @@ div.ui-btn-text a {
 }
 
 .ui-btn-text img {
-  width: 50%;
+  width: 35%;
 }
 
 #video-page #content .player {
@@ -89,7 +89,7 @@ div.ui-btn-text a {
 .my-page .ui-listview .ui-li.ui-btn {
     background-image: none;
     border-color: #222;
-    height: 250px;
+    height: 150px;
 }
 /* First breakpoint is 768px. 3 column layout. Tiles 250x250 pixels at the breakpoint. */
 @media all and (min-width: 768px){
